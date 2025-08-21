@@ -1,0 +1,140 @@
+\documentclass[twoside]{article}
+\usepackage{amsfonts,amssymb,amsbsy,textcomp,marvosym,picins,amsmath,caption,threeparttable,amsthm,subfigure,float,lastpage,lscape}
+\usepackage{eurosym,mathrsfs,fancyhdr,CJK,multicol,graphics,indentfirst,color,bm,upgreek,booktabs,graphicx,multirow,warpcol}
+\usepackage{epstopdf}
+\usepackage{cite}
+
+% ... (Preamble from JCST-Template-_submit_202105.tex) ...
+
+\headsep=5mm \headheight=4mm \topmargin=0cm \oddsidemargin=-0.5cm
+\evensidemargin=-0.5cm \marginparwidth=0pt \marginparsep= 0pt
+\marginparpush=0pt \textheight=23.1cm \textwidth=17.5cm \footskip=8mm
+\columnsep=7mm \setlength{\doublerulesep}{0.1pt}
+\footnotesep=3.5mm\arraycolsep=2pt
+\font\tenrm=cmr10
+\def\footnoterule{\kern 1mm \hrule width 10cm \kern 2mm}
+\def\rmd{{\rm d}} \def\rmi{{\rm i}} \def\rme{{\rm e}}
+\def\sj#1{$^{[#1]}$}\def\lt{\left}\def\rt{\right}
+\renewcommand{\captionfont}{\footnotesize}
+\renewcommand\tablename{\bf \footnotesize Table}
+\renewcommand\figurename{\footnotesize Fig.\!\!}
+\captionsetup{labelsep=period}
+\captionsetup[longtable]{labelsep=period}
+\allowdisplaybreaks
+\sloppy
+\renewcommand{\headrulewidth}{0pt}
+\catcode`@=11
+\def\title#1{\vspace{3mm}\begin{flushleft}\vglue-.1cm\Large\bf\boldmath\protect\baselineskip=18pt plus.2pt minus.1pt #1
+\end{flushleft}\vspace{1mm} }
+\def\author#1{\begin{flushleft}\normalsize #1\end{flushleft}\vspace*{-4pt} \vspace{3mm}}
+\def\address#1#2{\begin{flushleft}\vglue-.35cm${}^{#1}$\small\it #2\vglue-.35cm\end{flushleft}\vspace{-2mm}\par}
+\def\jz#1#2{{$^{\footnotesize\textcircled{\tiny #1}}$\let\thefootnote\relax\footnotetext{\!\!$^{\footnotesize\textcircled{\tiny #1}}$#2}}}
+\catcode`@=11
+\def\section{\@startsection{section}{1}{\z@}%
+ {-3ex \@plus -.3ex \@minus -.2ex}%
+ {2.2ex \@plus.2ex}%
+{\normalfont\normalsize\protect\baselineskip=14.5pt plus.2pt minus.2pt\bfseries}}
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+ {-3ex\@plus -.2ex \@minus -.2ex}%
+ {2ex \@plus.2ex}%
+{\normalfont\normalsize\protect\baselineskip=12.5pt plus.2pt minus.2pt\bfseries}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+ {-2.2ex\@plus -.21ex \@minus -.2ex}%
+ {1.4ex \@plus.2ex}
+{\normalfont\normalsize\protect\baselineskip=12pt plus.2pt minus.2pt\sl}}
+\def\proofname{{\indent \it Proof.}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\small\sl Bosphorus Ship Detection System Using YOLOv8}
+\fancyhead[RO]{\small\thepage}
+\fancyhead[LE]{\small\thepage}
+\fancyhead[RE]{\small\sl J. Comput. Sci. \& Technol.}
+\setcounter{page}{1}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\thispagestyle{empty}
+\vspace*{-13mm}
+\noindent {\small JOURNAL OF COMPUTER SCIENCE AND TECHNOLOGY}
+\vspace*{2mm}
+
+\title{BOSPHORUS SHIP DETECTION SYSTEM: A Sophisticated Web Application for Maritime Surveillance Using YOLO Deep Learning Technology}
+
+\author{Recep Ertugrul Eksi}
+\address{1}{Uskudar University, Computer Engineering Department, Istanbul, 34662, Turkey}
+
+\let\thefootnote\relax\footnotetext{{}\\[-4mm]\indent\ Regular Paper}
+
+\noindent {\small\bf Abstract} \quad  {\small This paper presents the development and implementation of a web application for ship detection in the Istanbul Bosphorus strait using YOLOv8. [cite_start]The system achieves 89\% mAP@0.5 detection accuracy, outperforming methods like Faster R-CNN (84\%) and RetinaNet (82%)[cite: 2]. [cite_start]Evaluated on a dataset of 150 high-resolution images with 852 annotated vessels, it demonstrates 87\% overall precision and 84\% recall[cite: 3]. [cite_start]An enhanced multi-scale detection pipeline improves small vessel detection by 12\% [cite: 4][cite_start], and advanced context filtering reduces false positives to 9\%, while maintaining 35 FPS[cite: 5]. [cite_start]The system shows robust performance across various weather conditions, with statistical analysis confirming significant improvements over baseline models (p < 0.001)[cite: 7, 8].}
+
+\vspace*{3mm}
+
+\noindent{\small\bf Keywords} \quad {\small Computer Vision, Deep Learning, Maritime Surveillance, Real-time Processing, Ship Detection, YOLOv8}
+
+\vspace*{4mm}
+
+\end{CJK*}
+\begin{multicols}{2}
+
+\section{Introduction}
+[cite_start]The Istanbul Bosphorus is a critical maritime passage with over 50,000 vessels annually, making effective surveillance essential for safety and security[cite: 10]. [cite_start]Traditional methods like radar and human observation have limitations, which can be addressed by automated systems using computer vision and deep learning[cite: 11, 12]. This work details a high-performance web-based ship detection system tailored for this challenging environment.
+
+Our primary objectives were to develop a user-friendly, web-based ship detection system using YOLOv8, optimized for Bosphorus conditions, and to provide a comprehensive performance analysis against established benchmarks.
+
+\section{Methodology}
+[cite_start]The system is built on a three-tier architecture: a presentation layer using HTML5/CSS3 and JavaScript, an application layer powered by a Flask web framework, and a data layer using a PostgreSQL database[cite: 49].
+
+[cite_start]At its core is a YOLOv8s model, chosen for its optimal balance of accuracy, speed, and efficiency[cite: 50]. We implemented several maritime-specific optimizations:
+\begin{itemize}
+    [cite_start]\item \textbf{Multi-Scale Detection}: Images are processed at three resolutions (640px, 832px, 1024px) to accurately detect vessels of varying sizes[cite: 51].
+    [cite_start]\item \textbf{Adaptive Thresholding}: Confidence thresholds are dynamically adjusted based on image brightness and contrast to improve detection in variable lighting[cite: 62].
+    [cite_start]\item \textbf{Intelligent Merging}: A DBSCAN clustering algorithm merges detections from different scales to reduce duplicates and improve bounding box accuracy[cite: 63, 67].
+    [cite_start]\item \textbf{Maritime Context Filtering}: Post-processing filters are applied to validate vessel geometry, position, and size, significantly reducing false positives[cite: 70, 72].
+\end{itemize}
+
+\section{Experimental Results}
+[cite_start]We constructed a comprehensive dataset of 150 high-resolution images from the Bosphorus, containing 852 annotated vessels across five categories[cite: 3, 82]. The system was benchmarked against several standard object detection models.
+
+\subsection{Quantitative Analysis}
+[cite_start]Our proposed method achieved state-of-the-art performance, with an mAP@0.5 of 89\%, surpassing the baseline YOLOv8s (86\%), YOLOv5s (85\%), Faster R-CNN (84\%), and RetinaNet (82%)[cite: 2, 85]. [cite_start]The system maintains a real-time processing speed of 35 FPS[cite: 85].
+
+\begin{center}
+{\footnotesize{\bf Table 1.} Detection Performance Comparison}\\
+\vspace{2mm}
+\footnotesize{
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
+\hline
+Method & mAP@0.5 & mAP\_S & FPS \\
+\hline
+Faster R-CNN & 0.84 & 0.65 & 12 \\
+RetinaNet & 0.82 & 0.61 & 15 \\
+YOLOv5s & 0.85 & 0.67 & 31 \\
+YOLOv8s (base) & 0.86 & 0.69 & 35 \\
+\textbf{Our Method} & \textbf{0.89} & \textbf{0.73} & \textbf{35} \\
+\hline
+\end{tabular*}
+}
+\end{center}
+
+[cite_start]The system performed well across different vessel types, with particularly high precision for tankers (94\%) and cargo ships (92%)[cite: 6]. [cite_start]It also demonstrated robustness in varying environmental conditions, achieving 91\% mAP in clear weather and 86\% in overcast conditions[cite: 7].
+
+\subsection{Ablation Studies}
+Ablation studies confirmed the effectiveness of our enhancements. [cite_start]The triple-scale detection strategy improved mAP for small vessels from 65\% (single scale) to 73%[cite: 4]. [cite_start]The post-processing pipeline, including the maritime context filter and adaptive thresholding, collectively reduced the false positive rate from 18\% to 9%[cite: 5, 87].
+
+\section{Conclusion}
+This paper presents a highly effective and user-friendly web application for ship detection in the Bosphorus. By integrating a multi-scale detection pipeline and maritime-specific context filtering with the YOLOv8 architecture, our system achieves superior accuracy and real-time performance. [cite_start]Statistical analysis confirms the significance of these improvements (p < 0.001)[cite: 8]. The developed system provides a robust solution for maritime surveillance with practical applications in traffic management, security, and environmental monitoring. Future work will focus on temporal tracking and multi-modal sensor fusion.
+
+\begin{thebibliography}{99}
+\footnotesize
+\itemsep=-3pt plus.2pt minus.2pt
+\baselineskip=13pt plus.2pt minus.2pt
+\bibitem{1} Redmon J, Divvala S, Girshick R, Farhadi A. You only look once: Unified, real-time object detection. [cite_start]In {\it Proc. the IEEE conference on computer vision and pattern recognition}, 2016, pp.779-788. [cite: 109]
+[cite_start]\bibitem{2} Bochkovskiy A, Wang C Y, Liao H Y M. YOLOv4: Optimal speed and accuracy of object detection. arXiv:2004.10934, 2020. [cite: 111]
+\bibitem{3} Liu R W, Yuan W, Chen X, Lu Y. An enhanced CNN-enabled learning method for promoting ship detection in maritime surveillance system. [cite_start]{\it Ocean Engineering}, 2021, 235: 109435. [cite: 128]
+\bibitem{4} Chen L, Shi W, Deng D. Improved YOLOv3 based on attention mechanism for fast and accurate ship detection in optical remote sensing images. [cite_start]{\it Remote Sensing}, 2020, 13(4): 660. [cite: 130]
+\bibitem{5} Ultralytics. [cite_start]YOLOv8: A new state-of-the-art computer vision model. https://ultralytics.com/yolov8, 2023. [cite: 110]
+\end{thebibliography}
+
+\end{multicols}
+\end{document}
