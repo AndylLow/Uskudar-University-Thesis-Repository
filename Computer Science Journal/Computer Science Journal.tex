@@ -13,13 +13,11 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{booktabs}
+
 \usepackage{hyperref}
 
 \title{BOSPHORUS SHIP DETECTION SYSTEM: A Sophisticated Web Application for Maritime Surveillance Using YOLO Deep Learning Technology}
-\author{Recep Ertugrul Eksi}
-\affil{Uskudar University, Computer Engineering Department}
-\shortauthor{R. E. Eksi}
+\author{Recep Ertugrul Eksi \\ Uskudar University, Computer Engineering Department}
 \date{\today}
 
 \begin{document}
@@ -174,15 +172,15 @@ Table \ref{tab:related_work} summarizes recent maritime detection approaches and
 \caption{Comparison of Recent Maritime Detection Approaches}
 \label{tab:related_work}
 \begin{tabular}{llccc}
-\toprule
+\hline
 Author & Method & Dataset & mAP (%) & FPS \\
-\midrule
+\hline
 Liu et al. (2021) & Enhanced YOLOv3 & Custom & 89.2 & 31 \\
 Chen et al. (2020) & Multi-scale YOLO & SeaShips & 87.4 & 28 \\
 Zhang et al. (2021) & Attention-YOLO & MARVEL & 83.6 & 25 \\
 Wang et al. (2022) & Optimized YOLOv5 & SMD & 85.3 & 23 \\
 \textbf{Our Approach} & \textbf{Enhanced YOLOv8} & \textbf{Bosphorus} & \textbf{87.0} & \textbf{35} \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -664,16 +662,16 @@ The evaluation dataset was systematically constructed to ensure comprehensive co
 \caption{Comprehensive Detection Performance Comparison}
 \label{tab:detection_performance}
 \begin{tabular}{@{}lcccccc@{}}
-\toprule
+\hline
 Method & mAP@0.5 & mAP@0.5:0.95 & mAP\_S & mAP\_M & mAP\_L & FPS \\
-\midrule
+\hline
 Faster R-CNN & 0.84 & 0.72 & 0.65 & 0.78 & 0.89 & 12 \\
 RetinaNet & 0.82 & 0.69 & 0.61 & 0.75 & 0.87 & 15 \\
 SSD MobileNet & 0.76 & 0.58 & 0.52 & 0.68 & 0.81 & 28 \\
 YOLOv5s & 0.85 & 0.73 & 0.67 & 0.79 & 0.91 & 31 \\
 YOLOv8s (baseline) & 0.86 & 0.74 & 0.69 & 0.81 & 0.92 & 35 \\
 \textbf{Our Method} & \textbf{0.89} & \textbf{0.77} & \textbf{0.73} & \textbf{0.84} & \textbf{0.94} & \textbf{35} \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -684,17 +682,17 @@ YOLOv8s (baseline) & 0.86 & 0.74 & 0.69 & 0.81 & 0.92 & 35 \\
 \caption{Detection Performance by Vessel Type}
 \label{tab:vessel_performance}
 \begin{tabular}{@{}lccccc@{}}
-\toprule
+\hline
 Vessel Type & Precision & Recall & F1-Score & AP@0.5 & Sample Size \\
-\midrule
+\hline
 Cargo Ships & 0.92 & 0.88 & 0.90 & 0.91 & 342 \\
 Ferries & 0.89 & 0.91 & 0.90 & 0.89 & 198 \\
 Small Boats & 0.78 & 0.74 & 0.76 & 0.75 & 156 \\
 Tankers & 0.94 & 0.87 & 0.90 & 0.92 & 89 \\
 Fishing Vessels & 0.81 & 0.79 & 0.80 & 0.82 & 67 \\
-\midrule
+\hline
 \textbf{Overall} & \textbf{0.87} & \textbf{0.84} & \textbf{0.85} & \textbf{0.86} & \textbf{852} \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -705,14 +703,14 @@ Fishing Vessels & 0.81 & 0.79 & 0.80 & 0.82 & 67 \\
 \caption{Performance Under Different Environmental Conditions}
 \label{tab:environmental_performance}
 \begin{tabular}{@{}lcccc@{}}
-\toprule
+\hline
 Condition & mAP@0.5 & Precision & Recall & Images \\
-\midrule
+\hline
 Clear/Sunny & 0.91 & 0.89 & 0.89 & 68 \\
 Overcast & 0.86 & 0.84 & 0.84 & 37 \\
 Dawn/Dusk & 0.82 & 0.79 & 0.79 & 30 \\
 Foggy & 0.74 & 0.71 & 0.71 & 15 \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -725,13 +723,13 @@ Foggy & 0.74 & 0.71 & 0.71 & 15 \\
 \caption{Ablation Study: Multi-Scale Detection}
 \label{tab:multiscale_ablation}
 \begin{tabular}{@{}lccc@{}}
-\toprule
+\hline
 Configuration & mAP@0.5 & mAP\_Small & Processing Time (s) \\
-\midrule
+\hline
 Single Scale (640px) & 0.83 & 0.65 & 0.8 \\
 Dual Scale (640px, 832px) & 0.86 & 0.69 & 1.2 \\
 Triple Scale (640px, 832px, 1024px) & 0.89 & 0.73 & 1.8 \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 
@@ -742,14 +740,14 @@ Triple Scale (640px, 832px, 1024px) & 0.89 & 0.73 & 1.8 \\
 \caption{Ablation Study: Post-Processing Components}
 \label{tab:postprocessing_ablation}
 \begin{tabular}{@{}lccc@{}}
-\toprule
+\hline
 Components & mAP@0.5 & False Positive Rate & Processing Overhead (ms) \\
-\midrule
+\hline
 Baseline YOLOv8s & 0.86 & 0.18 & 0 \\
 + Maritime Context Filter & 0.87 & 0.14 & 45 \\
 + Vessel Clustering & 0.88 & 0.12 & 78 \\
 + Adaptive Thresholding & 0.89 & 0.09 & 95 \\
-\bottomrule
+\hline
 \end{tabular}
 \end{table}
 

@@ -18,4 +18,4 @@
 
 **Status:**
 
-- **Debugging:** I have applied a new round of fixes to both files based on the latest error logs. I am now waiting for the user to run the compilation again and confirm if the issues are resolved.
+- **Debugging:** I have applied new fixes to `Computer Science Journal.tex`. I am waiting for the user to confirm if it compiles. I am also waiting for the user to provide more details about the visual layout issues with `Journal of Computer Science and Technology.tex`.
