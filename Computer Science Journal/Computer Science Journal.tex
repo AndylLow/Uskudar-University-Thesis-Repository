@@ -17,7 +17,8 @@
 \usepackage{hyperref}
 
 \title{BOSPHORUS SHIP DETECTION SYSTEM: A Sophisticated Web Application for Maritime Surveillance Using YOLO Deep Learning Technology}
-\author{Recep Ertugrul Eksi \\ Uskudar University \\ Computer Engineering Department}
+\author{Recep Ertugrul Eksi}
+\affil{Uskudar University, Computer Engineering Department}
 \date{\today}
 
 \begin{document}
@@ -101,7 +102,7 @@ The introduction of Convolutional Neural Networks (CNNs) marked a paradigm shift
 \subsection{YOLO Architecture Evolution and Maritime Applications}
 
 \subsubsection{YOLO Fundamentals}
-The You Only Look Once (YOLO) architecture, introduced by Redmon et al. (2016) \cite{yolo_original}, revolutionized object detection by treating it as a single regression problem, enabling real-time processing speeds.
+The You Only Look Once (YOLO) architecture, introduced by Redmon et al. (2016) \cite{redmon2016you}, revolutionized object detection by treating it as a single regression problem, enabling real-time processing speeds.
 
 \subsubsection{YOLO Version Progression}
 
@@ -116,7 +117,7 @@ The You Only Look Once (YOLO) architecture, introduced by Redmon et al. (2016) \
 Bochkovskiy et al. (2020) \cite{bochkovskiy2020yolov4} introduced CSPDarknet53 backbone and PANet neck architecture, achieving 65.7% AP50 on COCO dataset while maintaining real-time performance.
 
 \textbf{YOLOv8 Advanced Features:}
-Ultralytics YOLOv8 \cite{yolov8} incorporates:
+Ultralytics YOLOv8 \cite{ultralytics2023yolov8} incorporates:
 \begin{itemize}
     \item CSPDarknet backbone with C2f modules for improved gradient flow
     \item Anchor-free detection head reducing computational overhead
@@ -171,7 +172,7 @@ Table \ref{tab:related_work} summarizes recent maritime detection approaches and
 \centering
 \caption{Comparison of Recent Maritime Detection Approaches}
 \label{tab:related_work}
-\begin{tabular}{@{}llccc@{}}
+\begin{tabular}{llccc}
 \toprule
 Author & Method & Dataset & mAP (%) & FPS \\
 \midrule

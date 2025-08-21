@@ -18,4 +18,4 @@
 
 **Status:**
 
-- **Completed:** I have modified both `.tex` files to incorporate the content from `base.tex` and fix the structural issues that were likely causing compilation errors. The bibliography has been adapted for each template.
+- **Debugging:** I have applied fixes to both files based on the error logs. I am now waiting for the user to run the full LaTeX compilation cycle (including BibTeX) and confirm if the issues are resolved.
