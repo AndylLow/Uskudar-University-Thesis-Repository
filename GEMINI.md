@@ -18,4 +18,4 @@
 
 **Status:**
 
-- **Debugging:** I have applied fixes to both files based on the error logs. I am now waiting for the user to run the full LaTeX compilation cycle (including BibTeX) and confirm if the issues are resolved.
+- **Debugging:** I have applied a new round of fixes to both files based on the latest error logs. I am now waiting for the user to run the compilation again and confirm if the issues are resolved.
